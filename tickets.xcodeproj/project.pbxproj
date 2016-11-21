@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F738601A1DD848D800DA3DB9 /* InquireTicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */; };
+		F759DA321DD4B1CA00046F39 /* FlightInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA311DD4B1CA00046F39 /* FlightInfoTableViewController.m */; };
+		F759DA351DD6A6D500046F39 /* FlightInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA341DD6A6D500046F39 /* FlightInfoCell.m */; };
+		F759DA381DD6A99D00046F39 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA371DD6A99D00046F39 /* DetailViewController.m */; };
 		F76DA1921DCC6F190071AB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1911DCC6F190071AB54 /* main.m */; };
 		F76DA1951DCC6F190071AB54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1941DCC6F190071AB54 /* AppDelegate.m */; };
 		F76DA1981DCC6F190071AB54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1971DCC6F190071AB54 /* ViewController.m */; };
 		F76DA19B1DCC6F190071AB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76DA1991DCC6F190071AB54 /* Main.storyboard */; };
 		F76DA19D1DCC6F190071AB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76DA19C1DCC6F190071AB54 /* Assets.xcassets */; };
 		F76DA1A01DCC6F190071AB54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76DA19E1DCC6F190071AB54 /* LaunchScreen.storyboard */; };
+		F76DA1AB1DCC720A0071AB54 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F76DA1AA1DCC720A0071AB54 /* libsqlite3.0.tbd */; };
+		F76DA1AE1DCCB7CE0071AB54 /* enterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1AD1DCCB7CE0071AB54 /* enterInfo.m */; };
+		F76DA1B11DCCB9370071AB54 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1B01DCCB9370071AB54 /* Database.m */; };
+		FB1B807ED7E1AF1A6FDB35C1 /* Pods_tickets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB1904FDCF567B2D411E8B3 /* Pods_tickets.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11441FF1F91550B159ACF85E /* Pods-tickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.debug.xcconfig"; sourceTree = "<group>"; };
+		1BB1904FDCF567B2D411E8B3 /* Pods_tickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94FACF0B94BE891CC7FC3F13 /* Pods-tickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.release.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.release.xcconfig"; sourceTree = "<group>"; };
+		F73860181DD848D800DA3DB9 /* InquireTicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InquireTicketsTableViewController.h; sourceTree = "<group>"; };
+		F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InquireTicketsTableViewController.m; sourceTree = "<group>"; };
+		F759DA301DD4B1CA00046F39 /* FlightInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightInfoTableViewController.h; sourceTree = "<group>"; };
+		F759DA311DD4B1CA00046F39 /* FlightInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightInfoTableViewController.m; sourceTree = "<group>"; };
+		F759DA331DD6A6D500046F39 /* FlightInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightInfoCell.h; sourceTree = "<group>"; };
+		F759DA341DD6A6D500046F39 /* FlightInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightInfoCell.m; sourceTree = "<group>"; };
+		F759DA361DD6A99D00046F39 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F759DA371DD6A99D00046F39 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F76DA18D1DCC6F190071AB54 /* tickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76DA1911DCC6F190071AB54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F76DA1931DCC6F190071AB54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +45,11 @@
 		F76DA19C1DCC6F190071AB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76DA19F1DCC6F190071AB54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76DA1A11DCC6F190071AB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76DA1AA1DCC720A0071AB54 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F76DA1AC1DCCB7CE0071AB54 /* enterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enterInfo.h; sourceTree = "<group>"; };
+		F76DA1AD1DCCB7CE0071AB54 /* enterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enterInfo.m; sourceTree = "<group>"; };
+		F76DA1AF1DCCB9370071AB54 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		F76DA1B01DCCB9370071AB54 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +57,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76DA1AB1DCC720A0071AB54 /* libsqlite3.0.tbd in Frameworks */,
+				FB1B807ED7E1AF1A6FDB35C1 /* Pods_tickets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8289EC56A5D6BC8ECF1FF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F76DA1AA1DCC720A0071AB54 /* libsqlite3.0.tbd */,
+				1BB1904FDCF567B2D411E8B3 /* Pods_tickets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		559078107C143ED149192A9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11441FF1F91550B159ACF85E /* Pods-tickets.debug.xcconfig */,
+				94FACF0B94BE891CC7FC3F13 /* Pods-tickets.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F76DA1841DCC6F180071AB54 = {
 			isa = PBXGroup;
 			children = (
 				F76DA18F1DCC6F190071AB54 /* tickets */,
 				F76DA18E1DCC6F190071AB54 /* Products */,
+				559078107C143ED149192A9D /* Pods */,
+				0E8289EC56A5D6BC8ECF1FF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +108,19 @@
 				F76DA1941DCC6F190071AB54 /* AppDelegate.m */,
 				F76DA1961DCC6F190071AB54 /* ViewController.h */,
 				F76DA1971DCC6F190071AB54 /* ViewController.m */,
+				F759DA301DD4B1CA00046F39 /* FlightInfoTableViewController.h */,
+				F759DA311DD4B1CA00046F39 /* FlightInfoTableViewController.m */,
+				F76DA1AF1DCCB9370071AB54 /* Database.h */,
+				F76DA1B01DCCB9370071AB54 /* Database.m */,
 				F76DA1991DCC6F190071AB54 /* Main.storyboard */,
+				F73860181DD848D800DA3DB9 /* InquireTicketsTableViewController.h */,
+				F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */,
+				F759DA361DD6A99D00046F39 /* DetailViewController.h */,
+				F759DA371DD6A99D00046F39 /* DetailViewController.m */,
+				F759DA331DD6A6D500046F39 /* FlightInfoCell.h */,
+				F759DA341DD6A6D500046F39 /* FlightInfoCell.m */,
+				F76DA1AC1DCCB7CE0071AB54 /* enterInfo.h */,
+				F76DA1AD1DCCB7CE0071AB54 /* enterInfo.m */,
 				F76DA19C1DCC6F190071AB54 /* Assets.xcassets */,
 				F76DA19E1DCC6F190071AB54 /* LaunchScreen.storyboard */,
 				F76DA1A11DCC6F190071AB54 /* Info.plist */,
@@ -86,9 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76DA1A41DCC6F190071AB54 /* Build configuration list for PBXNativeTarget "tickets" */;
 			buildPhases = (
+				E5F9E2145D95C7800D10567B /* 📦 Check Pods Manifest.lock */,
 				F76DA1891DCC6F190071AB54 /* Sources */,
 				F76DA18A1DCC6F190071AB54 /* Frameworks */,
 				F76DA18B1DCC6F190071AB54 /* Resources */,
+				931850A90B4BBBB6CD9719BE /* 📦 Embed Pods Frameworks */,
+				A90A4A0E837A09BF991BB7B7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,13 +207,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		931850A90B4BBBB6CD9719BE /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tickets/Pods-tickets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A90A4A0E837A09BF991BB7B7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tickets/Pods-tickets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F9E2145D95C7800D10567B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F76DA1891DCC6F190071AB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F76DA1981DCC6F190071AB54 /* ViewController.m in Sources */,
+				F76DA1AE1DCCB7CE0071AB54 /* enterInfo.m in Sources */,
+				F759DA381DD6A99D00046F39 /* DetailViewController.m in Sources */,
+				F759DA321DD4B1CA00046F39 /* FlightInfoTableViewController.m in Sources */,
 				F76DA1951DCC6F190071AB54 /* AppDelegate.m in Sources */,
+				F759DA351DD6A6D500046F39 /* FlightInfoCell.m in Sources */,
+				F76DA1B11DCCB9370071AB54 /* Database.m in Sources */,
+				F738601A1DD848D800DA3DB9 /* InquireTicketsTableViewController.m in Sources */,
 				F76DA1921DCC6F190071AB54 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +384,7 @@
 		};
 		F76DA1A51DCC6F190071AB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11441FF1F91550B159ACF85E /* Pods-tickets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97XJP2BYQH;
@@ -281,6 +397,7 @@
 		};
 		F76DA1A61DCC6F190071AB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94FACF0B94BE891CC7FC3F13 /* Pods-tickets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97XJP2BYQH;
@@ -310,6 +427,7 @@
 				F76DA1A61DCC6F190071AB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
