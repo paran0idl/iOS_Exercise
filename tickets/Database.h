@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString * doc;
 @property (nonatomic, retain) NSString *fileName;
 +(void)insertToDataBase:(NSString *)FlightNo AirplaneNo:(NSString *)AirplaneNo DCity:(NSString *)DCity ACity:(NSString *)ACity DTime:(NSString *)DTime ATime:(NSString *)ATime Price:(NSString *)Price DisPrice:(NSString *)DisPrice TotalT:(NSString *)TotalT LeftT:(NSString *)LeftT DataBase:(FMDatabase *)db;
++(void)insertUserFileToDataBase:(NSString *)UserName UserID:(NSString *)UserID UserSex:(NSString *)UserSex DateOfBirth:(NSString *)DateOfBirth DataBase:(FMDatabase *)db;
 +(void)createDataBase:(NSString *)doc filename:(NSString *)fileName;
++(void)createUserFile:(NSString *)doc filename:(NSString *)fileName;
 +(NSString *)loadDataBase:(NSString *)doc filename:(NSString *)fileName;
 @end

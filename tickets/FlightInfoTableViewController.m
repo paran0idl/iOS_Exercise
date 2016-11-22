@@ -51,9 +51,6 @@
     [super didReceiveMemoryWarning];
     
 }
--(void)returnData:(returnDataBlock)DataBlock{
-    self.returnDataBlock=DataBlock;
-}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

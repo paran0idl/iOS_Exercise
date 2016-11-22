@@ -15,6 +15,5 @@ typedef void(^returnDataBlock)(NSDictionary *flightInfo);
 //@property(nonatomic,weak)NSMutableArray* listofFlights;
 
 -(NSMutableArray *)addObjectWithFlightInfo;
--(void)returnData:(returnDataBlock)DataBlock;
 -(void)refresh;                                                                                                                                                                                                                                                                
 @end

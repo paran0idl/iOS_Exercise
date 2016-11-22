@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0235251DE464B40063B562 /* OrderTicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0235241DE464B40063B562 /* OrderTicketsTableViewController.m */; };
+		6B02352B1DE466A50063B562 /* EnterUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B02352A1DE466A50063B562 /* EnterUserInfoViewController.m */; };
+		6B02352E1DE471120063B562 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B02352D1DE471120063B562 /* UserInfoCell.m */; };
 		F738601A1DD848D800DA3DB9 /* InquireTicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */; };
 		F759DA321DD4B1CA00046F39 /* FlightInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA311DD4B1CA00046F39 /* FlightInfoTableViewController.m */; };
 		F759DA351DD6A6D500046F39 /* FlightInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA341DD6A6D500046F39 /* FlightInfoCell.m */; };
@@ -26,6 +29,12 @@
 /* Begin PBXFileReference section */
 		11441FF1F91550B159ACF85E /* Pods-tickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB1904FDCF567B2D411E8B3 /* Pods_tickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0235231DE464B40063B562 /* OrderTicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTicketsTableViewController.h; sourceTree = "<group>"; };
+		6B0235241DE464B40063B562 /* OrderTicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTicketsTableViewController.m; sourceTree = "<group>"; };
+		6B0235291DE466A50063B562 /* EnterUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterUserInfoViewController.h; sourceTree = "<group>"; };
+		6B02352A1DE466A50063B562 /* EnterUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterUserInfoViewController.m; sourceTree = "<group>"; };
+		6B02352C1DE471120063B562 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		6B02352D1DE471120063B562 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
 		94FACF0B94BE891CC7FC3F13 /* Pods-tickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.release.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.release.xcconfig"; sourceTree = "<group>"; };
 		F73860181DD848D800DA3DB9 /* InquireTicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InquireTicketsTableViewController.h; sourceTree = "<group>"; };
 		F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InquireTicketsTableViewController.m; sourceTree = "<group>"; };
@@ -104,6 +113,8 @@
 		F76DA18F1DCC6F190071AB54 /* tickets */ = {
 			isa = PBXGroup;
 			children = (
+				6B0235291DE466A50063B562 /* EnterUserInfoViewController.h */,
+				6B02352A1DE466A50063B562 /* EnterUserInfoViewController.m */,
 				F76DA1931DCC6F190071AB54 /* AppDelegate.h */,
 				F76DA1941DCC6F190071AB54 /* AppDelegate.m */,
 				F76DA1961DCC6F190071AB54 /* ViewController.h */,
@@ -113,6 +124,10 @@
 				F76DA1AF1DCCB9370071AB54 /* Database.h */,
 				F76DA1B01DCCB9370071AB54 /* Database.m */,
 				F76DA1991DCC6F190071AB54 /* Main.storyboard */,
+				6B02352C1DE471120063B562 /* UserInfoCell.h */,
+				6B02352D1DE471120063B562 /* UserInfoCell.m */,
+				6B0235231DE464B40063B562 /* OrderTicketsTableViewController.h */,
+				6B0235241DE464B40063B562 /* OrderTicketsTableViewController.m */,
 				F73860181DD848D800DA3DB9 /* InquireTicketsTableViewController.h */,
 				F73860191DD848D800DA3DB9 /* InquireTicketsTableViewController.m */,
 				F759DA361DD6A99D00046F39 /* DetailViewController.h */,
@@ -144,12 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76DA1A41DCC6F190071AB54 /* Build configuration list for PBXNativeTarget "tickets" */;
 			buildPhases = (
-				E5F9E2145D95C7800D10567B /* 📦 Check Pods Manifest.lock */,
+				E5F9E2145D95C7800D10567B /* [CP] Check Pods Manifest.lock */,
 				F76DA1891DCC6F190071AB54 /* Sources */,
 				F76DA18A1DCC6F190071AB54 /* Frameworks */,
 				F76DA18B1DCC6F190071AB54 /* Resources */,
-				931850A90B4BBBB6CD9719BE /* 📦 Embed Pods Frameworks */,
-				A90A4A0E837A09BF991BB7B7 /* 📦 Copy Pods Resources */,
+				931850A90B4BBBB6CD9719BE /* [CP] Embed Pods Frameworks */,
+				A90A4A0E837A09BF991BB7B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,14 +223,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		931850A90B4BBBB6CD9719BE /* 📦 Embed Pods Frameworks */ = {
+		931850A90B4BBBB6CD9719BE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,14 +238,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tickets/Pods-tickets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A90A4A0E837A09BF991BB7B7 /* 📦 Copy Pods Resources */ = {
+		A90A4A0E837A09BF991BB7B7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,14 +253,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tickets/Pods-tickets-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E5F9E2145D95C7800D10567B /* 📦 Check Pods Manifest.lock */ = {
+		E5F9E2145D95C7800D10567B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +275,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B02352E1DE471120063B562 /* UserInfoCell.m in Sources */,
 				F76DA1981DCC6F190071AB54 /* ViewController.m in Sources */,
 				F76DA1AE1DCCB7CE0071AB54 /* enterInfo.m in Sources */,
 				F759DA381DD6A99D00046F39 /* DetailViewController.m in Sources */,
 				F759DA321DD4B1CA00046F39 /* FlightInfoTableViewController.m in Sources */,
+				6B0235251DE464B40063B562 /* OrderTicketsTableViewController.m in Sources */,
 				F76DA1951DCC6F190071AB54 /* AppDelegate.m in Sources */,
 				F759DA351DD6A6D500046F39 /* FlightInfoCell.m in Sources */,
 				F76DA1B11DCCB9370071AB54 /* Database.m in Sources */,
 				F738601A1DD848D800DA3DB9 /* InquireTicketsTableViewController.m in Sources */,
+				6B02352B1DE466A50063B562 /* EnterUserInfoViewController.m in Sources */,
 				F76DA1921DCC6F190071AB54 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

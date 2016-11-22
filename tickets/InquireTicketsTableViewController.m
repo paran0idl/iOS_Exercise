@@ -13,7 +13,6 @@
 #import "DetailViewController.h"
 @interface InquireTicketsTableViewController ()<UISearchBarDelegate,UISearchControllerDelegate,UISearchResultsUpdating>
 {
-    //NSMutableArray *dataList;
     NSString *fileName;
     NSString *doc;
     FMDatabase *db;
@@ -33,6 +32,7 @@
     self.searchController.active=YES;
     self.searchController.searchBar.selectedScopeButtonIndex=0;
 }
+
 -(NSMutableArray *)addObjectWithFlightInfo{
     db = [FMDatabase databaseWithPath:fileName];
     [db open];
@@ -127,7 +127,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
