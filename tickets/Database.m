@@ -44,7 +44,23 @@
         NSLog(@"error when open db");
     }
 }
-
++(void)createOrderedFile:(NSString *)doc filename:(NSString *)fileName{
+    FMDatabase * db = [FMDatabase databaseWithPath:fileName];
+    if ([db open]) {
+        NSString * sql = @"CREATE TABLE 'Ordered' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'UserID' INTEGER, 'TicketID'INTEGER,'Seat'INTEGER,'Level'INTEGER)";
+        BOOL res = [db executeUpdate:sql];
+        if (!res) {
+            NSLog(@"error when creating db table user");
+            [db close];
+        } else {
+            NSLog(@"succ to creating db table user");
+            NSLog(@"%@",fileName);
+            [db close];
+        }
+    } else {
+        NSLog(@"error when open db");
+    }
+}
 +(NSString *)loadDataBase:(NSString *)Doc filename:(NSString *)FileName{
     NSFileManager * fileManager = [NSFileManager defaultManager];
     Doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
@@ -52,6 +68,7 @@
     if ([fileManager fileExistsAtPath:FileName] == NO){
         [self createDataBase:Doc filename:FileName];
         [self createUserFile:Doc filename:FileName];
+        [self createOrderedFile:Doc filename:FileName];
     }else{
         NSLog(@"File exist");
         NSLog(@"%@",FileName);

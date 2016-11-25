@@ -15,5 +15,6 @@
 +(void)insertUserFileToDataBase:(NSString *)UserName UserID:(NSString *)UserID UserSex:(NSString *)UserSex DateOfBirth:(NSString *)DateOfBirth DataBase:(FMDatabase *)db;
 +(void)createDataBase:(NSString *)doc filename:(NSString *)fileName;
 +(void)createUserFile:(NSString *)doc filename:(NSString *)fileName;
++(void)createOrderedFile:(NSString *)doc filename:(NSString *)fileName;
 +(NSString *)loadDataBase:(NSString *)doc filename:(NSString *)fileName;
 @end

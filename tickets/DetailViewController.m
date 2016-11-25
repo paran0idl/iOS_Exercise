@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "OrderTicketsTableViewController.h"
 @interface DetailViewController ()
 @end
 
@@ -25,20 +26,28 @@
     DisPrice.text=[NSString stringWithFormat:@"￥%@",[flightInfo valueForKey:@"DisPrice"]];
     LeftTotalT.text=[NSString stringWithFormat:@"%@/%@",[flightInfo valueForKey:@"LeftT"],[flightInfo valueForKey:@"TotalT"]];
     // Do any additional setup after loading the view.
+    NSLog(@"%@",[flightInfo valueForKey:@"id"]);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"ToUserInfo"]){
+        UINavigationController *nav=[segue destinationViewController];
+        OrderTicketsTableViewController *view=[[OrderTicketsTableViewController alloc] init];
+        view=nav.topViewController;
+        NSNumber *id=[NSNumber numberWithInt:[[flightInfo valueForKey:@"id"]intValue]];
+        NSNumber *seat=[NSNumber numberWithInt:[[flightInfo valueForKey:@"TotalT"] intValue]-[[flightInfo valueForKey:@"LeftT"] intValue]];
+        view.TicketID=id;
+        view.Seat=seat;
+    }
 }
-*/
+
 
 @end

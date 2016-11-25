@@ -26,9 +26,6 @@
 //@synthesize listofFlights;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    fileName=[[NSString alloc] init];
-    doc=[[NSString alloc] init];
-    db=[[FMDatabase alloc] init];
     listofFlights=[[NSMutableArray alloc] init];
     fileName=[Database loadDataBase:doc filename:fileName];
     listofFlights=[self addObjectWithFlightInfo];
@@ -74,14 +71,6 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
  //   [self performSegueWithIdentifier:@"detail" sender:self];
 }
