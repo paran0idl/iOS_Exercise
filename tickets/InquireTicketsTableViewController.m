@@ -23,9 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    fileName=[[NSString alloc] init];
-    doc=[[NSString alloc] init];
-    db=[[FMDatabase alloc] init];
     _dataList=[[NSMutableArray alloc] init];
     fileName=[Database loadDataBase:doc filename:fileName];
     _dataList=[self addObjectWithFlightInfo];

@@ -11,6 +11,8 @@
 #import "UserInfoCell.h"
 @interface OrderTicketsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (weak,nonatomic)NSNumber *TicketID;
+@property (weak,nonatomic)NSNumber *Seat;
 -(NSMutableArray *)addObjectWithUserInfo;
 -(void)refresh;  
 @end
