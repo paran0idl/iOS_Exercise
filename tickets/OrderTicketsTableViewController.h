@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak,nonatomic)NSNumber *TicketID;
 @property (weak,nonatomic)NSNumber *Seat;
+@property (weak,nonatomic)NSNumber *Level;
+@property (weak,nonatomic)NSNumber *Price;
+@property (weak,nonatomic)NSNumber *DisPrice;
 -(NSMutableArray *)addObjectWithUserInfo;
 -(void)refresh;  
 @end

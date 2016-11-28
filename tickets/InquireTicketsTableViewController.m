@@ -109,16 +109,12 @@
     }else if(self.searchController.searchBar.selectedScopeButtonIndex==2){
         preicate = [NSPredicate predicateWithFormat:@"Price == %d",[searchString intValue]];
     }
-    //NSPredicate *preicate = [NSPredicate predicateWithFormat:@"FlightNo BEGINSWITH[c] %@",searchString];
     if (self.searchList != nil) {
         [self.searchList removeAllObjects];
     }
     // 获取搜索后的数组
     self.searchList = [NSMutableArray arrayWithArray:[self.dataList filteredArrayUsingPredicate:preicate]];
-    /*for(NSDictionary *dic in _dataList){
-        [self.searchList addObject:[[dic allKeys]filteredArrayUsingPredicate:preicate]];
-    }*/
-    // 刷新表格
+
     [self.tableView reloadData];
 }
 #pragma mark - Table view data source

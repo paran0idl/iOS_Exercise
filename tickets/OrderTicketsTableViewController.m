@@ -25,7 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     fileName=[Database loadDataBase:doc filename:fileName];
+    [Database createOrderedFile:doc filename:fileName];
     listofUsers=[self addObjectWithUserInfo];
+    
     NSLog(@"%@",_TicketID);
     NSLog(@"%@",_Seat);
 }
@@ -83,15 +85,6 @@
     //[super viewWillAppear:YES];
     [self refresh];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         db = [FMDatabase databaseWithPath:fileName];
@@ -105,34 +98,42 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Alert" message:@"Order Tickets" preferredStyle:UIAlertControllerStyleAlert];
+    
+    //First Class
     UIAlertAction *First=[UIAlertAction actionWithTitle:@"First Class" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         NSLog(@"Top Clicked");
-    }];
+        NSLog(@"%@",[[listofUsers objectAtIndex:indexPath.row] valueForKey:@"id"]);
+        
+        [Database orderTickets:[NSNumber numberWithInteger:[[[listofUsers objectAtIndex:indexPath.row] valueForKey:@"id"] integerValue]] TicketID:_TicketID Seat:_Seat Level:[NSNumber numberWithInt:0] Price:_Price DataBase:db];
+        
+        UIAlertController *sucesss=[UIAlertController alertControllerWithTitle:@"Alert" message:@"Order Sucesss" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *Cancel=[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [sucesss addAction:Cancel];
+        [self presentViewController:sucesss animated:YES completion:nil];
+        }];
+    //Economic Class
     UIAlertAction *Second=[UIAlertAction actionWithTitle:@"Economic Class" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         NSLog(@"Second Clicked");
+        [Database orderTickets:[NSNumber numberWithInteger:[[[listofUsers objectAtIndex:indexPath.row] valueForKey:@"id"] integerValue]] TicketID:_TicketID Seat:_Seat Level:[NSNumber numberWithInt:1] Price:_DisPrice DataBase:db];
+        UIAlertController *sucesss=[UIAlertController alertControllerWithTitle:@"Alert" message:@"Order Sucesss" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *Cancel=[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [sucesss addAction:Cancel];
     }];
     UIAlertAction *Cancel=[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action){
         nil;
+        
     }];
     [alert addAction:First];
     [alert addAction:Second];
     [alert addAction:Cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

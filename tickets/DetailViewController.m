@@ -21,7 +21,6 @@
     ATime.text=[flightInfo valueForKey:@"ATime"];
     AirPlaneNo.text=[flightInfo valueForKey:@"AirPlaneNo"];
     FlightNo.text=[flightInfo valueForKey:@"FlightNo"];
-    //APrice.text=[flightInfo valueForKey:@"Price"];
     APrice.text=[NSString stringWithFormat:@"￥%@",[flightInfo valueForKey:@"Price"]];
     DisPrice.text=[NSString stringWithFormat:@"￥%@",[flightInfo valueForKey:@"DisPrice"]];
     LeftTotalT.text=[NSString stringWithFormat:@"%@/%@",[flightInfo valueForKey:@"LeftT"],[flightInfo valueForKey:@"TotalT"]];
@@ -44,8 +43,12 @@
         view=nav.topViewController;
         NSNumber *id=[NSNumber numberWithInt:[[flightInfo valueForKey:@"id"]intValue]];
         NSNumber *seat=[NSNumber numberWithInt:[[flightInfo valueForKey:@"TotalT"] intValue]-[[flightInfo valueForKey:@"LeftT"] intValue]];
+        NSNumber *Price=[NSNumber numberWithInt:[[flightInfo valueForKey:@"Price"]intValue]];
+        NSNumber *DPrice=[NSNumber numberWithInt:[[flightInfo valueForKey:@"DisPrice"]intValue]];
         view.TicketID=id;
         view.Seat=seat;
+        view.Price=Price;
+        view.DisPrice=DPrice;
     }
 }
 

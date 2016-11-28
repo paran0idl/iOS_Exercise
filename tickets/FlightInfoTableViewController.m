@@ -13,22 +13,26 @@
 #import "enterInfo.h"
 
 
-@interface FlightInfoTableViewController ()
+@interface FlightInfoTableViewController ()<UISearchBarDelegate,UISearchControllerDelegate,UISearchResultsUpdating>
 {
     NSString *fileName;
     NSString *doc;
     NSMutableArray *listofFlights;
     FMDatabase *db;
+    NSMutableArray *searchList;
 }
 @end
 
 @implementation FlightInfoTableViewController
-//@synthesize listofFlights;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listofFlights=[[NSMutableArray alloc] init];
+    //数据初始化
+    //listofFlights=[[NSMutableArray alloc] init];
     fileName=[Database loadDataBase:doc filename:fileName];
     listofFlights=[self addObjectWithFlightInfo];
+    
+    //搜索框初始化
+    self.searchController.searchBar.selectedScopeButtonIndex=0;
 }
 -(NSMutableArray *)addObjectWithFlightInfo{
     db = [FMDatabase databaseWithPath:fileName];
@@ -55,39 +59,87 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [listofFlights count];
+    if(self.searchController.active){
+        return  [searchList count];
+    }else{
+        return [listofFlights count];
+    }
 }
 
 
 - (FlightInfoCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FlightInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    //cell.textLabel.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
+    if(self.searchController.active){
+        cell.DCity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DCity"];
+        cell.ACity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ACity"];
+        cell.DTime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DTime"];
+        cell.ATime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ATime"];
+        cell.FlightNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
+        cell.AirPlaneNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+    }else{
     cell.DCity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"DCity"];
     cell.ACity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ACity"];
     cell.DTime.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"DTime"];
     cell.ATime.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ATime"];
     cell.FlightNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
     cell.AirPlaneNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+    }
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
- //   [self performSegueWithIdentifier:@"detail" sender:self];
-}
 
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         db = [FMDatabase databaseWithPath:fileName];
         [db open];
         [db executeUpdate:@"delete from Tickets where id = ?;",[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"id"]];
         [listofFlights removeObjectAtIndex:indexPath.row];
-        // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
     }   
 }
+#pragma mark - 搜索代理
+- (UISearchController *)searchController {
+    if (_searchController == nil) {
+        
+        // 传入 nil 默认在原视图展示
+        _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+        // 成为代理
+        _searchController.searchResultsUpdater = self;
+        // 搜索时是否出现遮罩
+        _searchController.dimsBackgroundDuringPresentation = NO;
+        // 搜索栏的
+        _searchController.searchBar.placeholder = @"请输入搜索内容";
+        self.tableView.tableHeaderView = self.searchController.searchBar;
+        self.searchController.searchBar.selectedScopeButtonIndex=0;
+        //_searchController.searchBar.showsScopeBar=YES;
+        _searchController.searchBar.scopeButtonTitles=@[@"D/ACity",@"FlightNo",@"Price"];
+    }
+    
+    return _searchController;
+}
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    // 获取搜索框文本
+    NSString *searchString = [self.searchController.searchBar text];
+    NSPredicate *preicate;
+    // 判断数组中是否包含 searchString
+    if(self.searchController.searchBar.selectedScopeButtonIndex==0){
+        preicate = [NSPredicate predicateWithFormat:@"DCity BEGINSWITH[c] %@",searchString];
+    }else if (self.searchController.searchBar.selectedScopeButtonIndex==1){
+        preicate = [NSPredicate predicateWithFormat:@"FlightNo BEGINSWITH[c] %@",searchString];
+    }else if(self.searchController.searchBar.selectedScopeButtonIndex==2){
+        preicate = [NSPredicate predicateWithFormat:@"Price == %d",[searchString intValue]];
+    }
+    if (searchList != nil) {
+        [searchList removeAllObjects];
+    }
+    // 获取搜索后的数组
+    searchList = [NSMutableArray arrayWithArray:[listofFlights filteredArrayUsingPredicate:preicate]];
+    
+    [self.tableView reloadData];
+}
+#pragma mark - refresh 操作
 -(void)refresh{
     if([listofFlights count]!=0){
         [listofFlights removeAllObjects];
@@ -97,6 +149,7 @@
     }
     [self.tableView reloadData];
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     //[super viewWillAppear:YES];
     [self refresh];
@@ -110,6 +163,7 @@
     detail=[segue destinationViewController];
     NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
     detail.flightInfo=[listofFlights objectAtIndex:indexPath.row];
+        self.searchController.active=NO;
     }else if([segue.identifier isEqualToString:@"enterInfo"]){
         enterInfo *info=[[enterInfo alloc] init];
         info=[segue destinationViewController];

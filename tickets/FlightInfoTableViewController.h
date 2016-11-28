@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^returnDataBlock)(NSDictionary *flightInfo);
 
 @interface FlightInfoTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
-@property(nonatomic,copy)returnDataBlock returnDataBlock;
-//@property(nonatomic,weak)NSMutableArray* listofFlights;
 
+@property (strong, nonatomic) UISearchController *searchController;
 -(NSMutableArray *)addObjectWithFlightInfo;
 -(void)refresh;                                                                                                                                                                                                                                                                
 @end

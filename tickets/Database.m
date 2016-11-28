@@ -47,7 +47,7 @@
 +(void)createOrderedFile:(NSString *)doc filename:(NSString *)fileName{
     FMDatabase * db = [FMDatabase databaseWithPath:fileName];
     if ([db open]) {
-        NSString * sql = @"CREATE TABLE 'Ordered' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'UserID' INTEGER, 'TicketID'INTEGER,'Seat'INTEGER,'Level'INTEGER)";
+        NSString * sql = @"CREATE TABLE 'Ordered' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'UserID' INTEGER, 'TicketID'INTEGER,'Seat'INTEGER,'Level'INTEGER,'Price'INTEGER)";
         BOOL res = [db executeUpdate:sql];
         if (!res) {
             NSLog(@"error when creating db table user");
@@ -94,6 +94,18 @@
     if ([db open]) {
         NSString * sql = @"insert into User (UserName,UserID,UserSex,DateOfBirth) values(?,?,?,?)";
         BOOL res = [db executeUpdate:sql,UserName,UserID,UserSex,DateOfBirth];
+        if (!res) {
+            NSLog(@"error to insert data");
+        } else {
+            NSLog(@"succ to insert data");
+        }
+        [db close];
+    }
+}
++(void)orderTickets:(NSNumber *)UserID TicketID:(NSNumber *)TicketID Seat:(NSNumber *)Seat Level:(NSNumber *)Level Price:(NSNumber *)Price DataBase:(FMDatabase *)db{
+    if ([db open]) {
+        NSString * sql = @"insert into Ordered (UserID,TicketID,Seat,Level,Price) values(?,?,?,?,?)";
+        BOOL res = [db executeUpdate:sql,UserID,TicketID,Seat,Level,Price];
         if (!res) {
             NSLog(@"error to insert data");
         } else {
