@@ -6,9 +6,9 @@
 //  Copyright © 2016年 李祖翔. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 #import "Database.h"
-@interface enterInfo : ViewController
+@interface enterInfo : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *FlightNo;
 @property (weak, nonatomic) IBOutlet UITextField *AirplaneNo;
 @property (weak, nonatomic) IBOutlet UITextField *DCity;

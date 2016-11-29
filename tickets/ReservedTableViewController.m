@@ -131,11 +131,22 @@
 - (void)refundButttonPress:(UIButton *)sender {
     db = [FMDatabase databaseWithPath:fileName];
     [db open];
-    NSLog(@"%@",[[listofReserved objectAtIndex:sender.tag] valueForKey:@"id"]);
-    [db executeUpdate:@"delete from Ordered where id = ?;",[[listofReserved objectAtIndex:sender.tag] valueForKey:@"id"]];
-    [listofReserved removeObjectAtIndex:sender.tag];
-    [self refresh];
-    [db close];
+    UIAlertController *deleteController=[UIAlertController alertControllerWithTitle:@"Refund" message:@"确定退票？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        [db executeUpdate:@"delete from Ordered where id = ?;",[[listofReserved objectAtIndex:sender.tag] valueForKey:@"id"]];
+        NSNumber *refund=[NSNumber numberWithInt:[[[listofReserved objectAtIndex:sender.tag] valueForKey:@"TicketID"]intValue]];
+        [Database refundTickets:refund DataBase:db];
+        [listofReserved removeObjectAtIndex:sender.tag];
+        
+        [self refresh];
+        [db close];
+    }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action){
+        nil;
+    }];
+    [deleteController addAction:deleteAction];
+    [deleteController addAction:cancelAction];
+    [self presentViewController:deleteController animated:YES completion:nil];
 }
 -(void)freeUpgrade{
     

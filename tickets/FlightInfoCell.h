@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *DTime;
 @property (weak, nonatomic) IBOutlet UILabel *FlightNo;
 @property (weak, nonatomic) IBOutlet UILabel *AirPlaneNo;
+@property (weak, nonatomic) IBOutlet UILabel *TicketStatus;
 
 @end

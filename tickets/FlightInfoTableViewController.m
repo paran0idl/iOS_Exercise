@@ -26,8 +26,6 @@
 @implementation FlightInfoTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //数据初始化
-    //listofFlights=[[NSMutableArray alloc] init];
     fileName=[Database loadDataBase:doc filename:fileName];
     listofFlights=[self addObjectWithFlightInfo];
     
@@ -70,20 +68,43 @@
 - (FlightInfoCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FlightInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if(self.searchController.active){
+        //
+        int ticket=[[[searchList objectAtIndex:indexPath.row]valueForKey:@"LeftT"] intValue];
+        
+        //
         cell.DCity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DCity"];
         cell.ACity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ACity"];
         cell.DTime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DTime"];
         cell.ATime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ATime"];
         cell.FlightNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
         cell.AirPlaneNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+        cell.TicketStatus.text=[NSString stringWithFormat:@"余票:%d",ticket];
+        if(ticket<20){
+            cell.TicketStatus.textColor=[UIColor redColor];
+        }else if (ticket<50){
+            cell.TicketStatus.textColor=[UIColor yellowColor];
+        }else{
+            cell.TicketStatus.textColor=[UIColor greenColor];
+        }
+        
     }else{
+        int ticket=[[[listofFlights objectAtIndex:indexPath.row]valueForKey:@"LeftT"] intValue];
     cell.DCity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"DCity"];
     cell.ACity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ACity"];
     cell.DTime.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"DTime"];
     cell.ATime.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ATime"];
     cell.FlightNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
     cell.AirPlaneNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+        cell.TicketStatus.text=[NSString stringWithFormat:@"余票:%d",ticket];
+        if(ticket<20){
+            cell.TicketStatus.textColor=[UIColor redColor];
+        }else if (ticket<50){
+            cell.TicketStatus.textColor=[UIColor yellowColor];
+        }else{
+            cell.TicketStatus.textColor=[UIColor greenColor];
+        }
     }
+    
     return cell;
 }
 
@@ -114,7 +135,7 @@
         self.tableView.tableHeaderView = self.searchController.searchBar;
         self.searchController.searchBar.selectedScopeButtonIndex=0;
         //_searchController.searchBar.showsScopeBar=YES;
-        _searchController.searchBar.scopeButtonTitles=@[@"D/ACity",@"FlightNo",@"Price"];
+        _searchController.searchBar.scopeButtonTitles=@[@"起飞城市",@"降落城市",@"航班号",@"Price"];
     }
     
     return _searchController;
@@ -127,9 +148,11 @@
     if(self.searchController.searchBar.selectedScopeButtonIndex==0){
         preicate = [NSPredicate predicateWithFormat:@"DCity BEGINSWITH[c] %@",searchString];
     }else if (self.searchController.searchBar.selectedScopeButtonIndex==1){
-        preicate = [NSPredicate predicateWithFormat:@"FlightNo BEGINSWITH[c] %@",searchString];
+        preicate = [NSPredicate predicateWithFormat:@"ACity BEGINSWITH[c] %@",searchString];
     }else if(self.searchController.searchBar.selectedScopeButtonIndex==2){
-        preicate = [NSPredicate predicateWithFormat:@"Price == %d",[searchString intValue]];
+        preicate = [NSPredicate predicateWithFormat:@"FlightNo BEGINSWITH[c] %@",searchString];
+    }else if (self.searchController.searchBar.selectedScopeButtonIndex==3){
+        preicate=[NSPredicate predicateWithFormat:@"Price == %d",[searchString intValue]];
     }
     if (searchList != nil) {
         [searchList removeAllObjects];

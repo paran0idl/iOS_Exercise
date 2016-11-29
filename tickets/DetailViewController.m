@@ -15,6 +15,7 @@
 @synthesize flightInfo,DCity,ACity,DTime,ATime,AirPlaneNo,FlightNo,LeftTotalT,APrice,DisPrice;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    int leftT=[[flightInfo valueForKey:@"LeftT"]intValue];
     DCity.text=[flightInfo valueForKey:@"DCity"];
     ACity.text=[flightInfo valueForKey:@"ACity"];
     DTime.text=[flightInfo valueForKey:@"DTime"];
@@ -26,6 +27,9 @@
     LeftTotalT.text=[NSString stringWithFormat:@"%@/%@",[flightInfo valueForKey:@"LeftT"],[flightInfo valueForKey:@"TotalT"]];
     // Do any additional setup after loading the view.
     NSLog(@"%@",[flightInfo valueForKey:@"id"]);
+    if(leftT==0){
+        _OrderButton.enabled=NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

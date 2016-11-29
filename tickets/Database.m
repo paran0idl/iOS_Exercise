@@ -111,7 +111,29 @@
         } else {
             NSLog(@"succ to insert data");
         }
+        sql=@"UPDATE Tickets SET LeftT = LeftT-1 WHERE id = (?)";
+        res=[db executeUpdate:sql,TicketID];
+        if (!res) {
+            NSLog(@"error to change ticket");
+        } else {
+            NSLog(@"succ to change ticket");
+        }
         [db close];
     }
+    
 }
++(void)refundTickets:(NSNumber *)TicketID DataBase:(FMDatabase *)db{
+    if ([db open]) {
+        NSString * sql = @"UPDATE Tickets SET LeftT = LeftT+1 WHERE id = (?)";
+        BOOL res = [db executeUpdate:sql,TicketID];
+        if (!res) {
+            NSLog(@"error to insert data");
+        } else {
+            NSLog(@"succ to insert data");
+        }
+        [db close];
+    }
+    
+}
+
 @end

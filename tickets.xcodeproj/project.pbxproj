@@ -17,7 +17,6 @@
 		F759DA381DD6A99D00046F39 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759DA371DD6A99D00046F39 /* DetailViewController.m */; };
 		F76DA1921DCC6F190071AB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1911DCC6F190071AB54 /* main.m */; };
 		F76DA1951DCC6F190071AB54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1941DCC6F190071AB54 /* AppDelegate.m */; };
-		F76DA1981DCC6F190071AB54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DA1971DCC6F190071AB54 /* ViewController.m */; };
 		F76DA19B1DCC6F190071AB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76DA1991DCC6F190071AB54 /* Main.storyboard */; };
 		F76DA19D1DCC6F190071AB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76DA19C1DCC6F190071AB54 /* Assets.xcassets */; };
 		F76DA1A01DCC6F190071AB54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76DA19E1DCC6F190071AB54 /* LaunchScreen.storyboard */; };
@@ -51,8 +50,6 @@
 		F76DA1911DCC6F190071AB54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F76DA1931DCC6F190071AB54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F76DA1941DCC6F190071AB54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F76DA1961DCC6F190071AB54 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F76DA1971DCC6F190071AB54 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F76DA19A1DCC6F190071AB54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F76DA19C1DCC6F190071AB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76DA19F1DCC6F190071AB54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,8 +117,6 @@
 				6B02352A1DE466A50063B562 /* EnterUserInfoViewController.m */,
 				F76DA1931DCC6F190071AB54 /* AppDelegate.h */,
 				F76DA1941DCC6F190071AB54 /* AppDelegate.m */,
-				F76DA1961DCC6F190071AB54 /* ViewController.h */,
-				F76DA1971DCC6F190071AB54 /* ViewController.m */,
 				F759DA301DD4B1CA00046F39 /* FlightInfoTableViewController.h */,
 				F759DA311DD4B1CA00046F39 /* FlightInfoTableViewController.m */,
 				F76DA1AF1DCCB9370071AB54 /* Database.h */,
@@ -329,7 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B02352E1DE471120063B562 /* UserInfoCell.m in Sources */,
-				F76DA1981DCC6F190071AB54 /* ViewController.m in Sources */,
 				F76DA1AE1DCCB7CE0071AB54 /* enterInfo.m in Sources */,
 				F7536A9B1DEA93B9003E5862 /* ReservedTableViewController.m in Sources */,
 				F759DA381DD6A99D00046F39 /* DetailViewController.m in Sources */,

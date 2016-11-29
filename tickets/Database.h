@@ -18,4 +18,5 @@
 +(void)createOrderedFile:(NSString *)doc filename:(NSString *)fileName;
 +(NSString *)loadDataBase:(NSString *)doc filename:(NSString *)fileName;
 +(void)orderTickets:(NSNumber *)UserID TicketID:(NSNumber *)TicketID Seat:(NSNumber *)Seat Level:(NSNumber *)Level Price:(NSNumber *)Price DataBase:(FMDatabase *)db;
++(void)refundTickets:(NSNumber *)TicketID DataBase:(FMDatabase *)db;
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 李祖翔. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface DetailViewController : ViewController
+@interface DetailViewController : UIViewController
 
 
 @property (weak, nonatomic) IBOutlet UILabel *DCity;
@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *LeftTotalT;
 @property(weak,nonatomic)NSDictionary *flightInfo;
 
+@property (weak, nonatomic) IBOutlet UIButton *OrderButton;
 
 @end

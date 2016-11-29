@@ -27,9 +27,6 @@
     fileName=[Database loadDataBase:doc filename:fileName];
     [Database createOrderedFile:doc filename:fileName];
     listofUsers=[self addObjectWithUserInfo];
-    
-    NSLog(@"%@",_TicketID);
-    NSLog(@"%@",_Seat);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -114,6 +111,8 @@
         [sucesss addAction:Cancel];
         [self presentViewController:sucesss animated:YES completion:nil];
         }];
+    
+    
     //Economic Class
     UIAlertAction *Second=[UIAlertAction actionWithTitle:@"Economic Class" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         NSLog(@"Second Clicked");
