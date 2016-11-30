@@ -13,7 +13,7 @@
 
         FMDatabase * db = [FMDatabase databaseWithPath:fileName];
         if ([db open]) {
-            NSString * sql = @"CREATE TABLE 'Tickets' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'FlightNo' VARCHAR(30), 'AirplaneNo' VARCHAR(30),'DCity' VARCHAR(30),'ACity' VARCHAR(30),'DTime' VARCHAR(30),'ATime' VARCHAR(30),'Price' INTEGER,'DisPrice' INTEGER,'TotalT' INTEGER,'LeftT' INTEGER,'isBooked' BOOLEAN)";
+            NSString * sql = @"CREATE TABLE 'Tickets' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'FlightNo' VARCHAR(30), 'AirplaneNo' VARCHAR(30),'DCity' VARCHAR(30),'ACity' VARCHAR(30),'DTime' VARCHAR(30),'ATime' VARCHAR(30),'Price' INTEGER,'DisPrice' INTEGER,'TotalT' INTEGER,'LeftT' INTEGER,'isBooked' BOOLEAN,'FirstSeat'INTEGER,'Date'VARCHAR(30))";
             BOOL res = [db executeUpdate:sql];
             if (!res) {
                 NSLog(@"error when creating db table tickets");
@@ -118,11 +118,21 @@
         } else {
             NSLog(@"succ to change ticket");
         }
+        if([Level intValue]==0){
+            sql=@"UPDATE Tickets SET FirstSeat = FirstSeat-1 WHERE id = (?)";
+            res=[db executeUpdate:sql,TicketID];
+            if (!res) {
+                NSLog(@"error to change seat");
+            } else {
+                NSLog(@"succ to change seat");
+            }
+
+        }
         [db close];
     }
     
 }
-+(void)refundTickets:(NSNumber *)TicketID DataBase:(FMDatabase *)db{
++(void)refundTickets:(NSNumber *)TicketID Level:(NSNumber *)Level DataBase:(FMDatabase *)db{
     if ([db open]) {
         NSString * sql = @"UPDATE Tickets SET LeftT = LeftT+1 WHERE id = (?)";
         BOOL res = [db executeUpdate:sql,TicketID];
@@ -130,6 +140,15 @@
             NSLog(@"error to insert data");
         } else {
             NSLog(@"succ to insert data");
+        }
+        if([Level intValue]==0){
+            sql=@"UPDATE Tickets SET FirstSeat = FirstSeat+1 WHERE id = (?)";
+            res=[db executeUpdate:sql,TicketID];
+            if (!res) {
+                NSLog(@"error to change seat");
+            } else {
+                NSLog(@"succ to change seat");
+            }
         }
         [db close];
     }

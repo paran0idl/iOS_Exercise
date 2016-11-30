@@ -78,6 +78,7 @@
         cell.ATime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ATime"];
         cell.FlightNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
         cell.AirPlaneNo.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+        cell.Date.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"Date"];
         cell.TicketStatus.text=[NSString stringWithFormat:@"余票:%d",ticket];
         if(ticket<20){
             cell.TicketStatus.textColor=[UIColor redColor];
@@ -95,6 +96,8 @@
     cell.ATime.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ATime"];
     cell.FlightNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"FlightNo"];
     cell.AirPlaneNo.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"AirplaneNo"];
+        cell.Date.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"Date"];
+
         cell.TicketStatus.text=[NSString stringWithFormat:@"余票:%d",ticket];
         if(ticket<20){
             cell.TicketStatus.textColor=[UIColor redColor];
@@ -135,7 +138,7 @@
         self.tableView.tableHeaderView = self.searchController.searchBar;
         self.searchController.searchBar.selectedScopeButtonIndex=0;
         //_searchController.searchBar.showsScopeBar=YES;
-        _searchController.searchBar.scopeButtonTitles=@[@"起飞城市",@"降落城市",@"航班号",@"Price"];
+        _searchController.searchBar.scopeButtonTitles=@[@"起飞城市",@"降落城市",@"航班号"];
     }
     
     return _searchController;
@@ -150,9 +153,7 @@
     }else if (self.searchController.searchBar.selectedScopeButtonIndex==1){
         preicate = [NSPredicate predicateWithFormat:@"ACity BEGINSWITH[c] %@",searchString];
     }else if(self.searchController.searchBar.selectedScopeButtonIndex==2){
-        preicate = [NSPredicate predicateWithFormat:@"FlightNo BEGINSWITH[c] %@",searchString];
-    }else if (self.searchController.searchBar.selectedScopeButtonIndex==3){
-        preicate=[NSPredicate predicateWithFormat:@"Price == %d",[searchString intValue]];
+        preicate = [NSPredicate predicateWithFormat:@"FlightNo CONTAINS %@",searchString];
     }
     if (searchList != nil) {
         [searchList removeAllObjects];
@@ -185,8 +186,12 @@
     DetailViewController *detail=[[DetailViewController alloc] init];
     detail=[segue destinationViewController];
     NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
-    detail.flightInfo=[listofFlights objectAtIndex:indexPath.row];
-        self.searchController.active=NO;
+        if(self.searchController.active==YES){
+            detail.flightInfo=[searchList objectAtIndex:indexPath.row];
+        }else{
+            detail.flightInfo=[listofFlights objectAtIndex:indexPath.row];
+        }
+            self.searchController.active=NO;
     }else if([segue.identifier isEqualToString:@"enterInfo"]){
         enterInfo *info=[[enterInfo alloc] init];
         info=[segue destinationViewController];

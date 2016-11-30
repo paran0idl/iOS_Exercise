@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *APrice;
 @property (weak, nonatomic) IBOutlet UILabel *DisPrice;
 @property (weak, nonatomic) IBOutlet UILabel *LeftTotalT;
+@property (weak, nonatomic) IBOutlet UILabel *FirstLeft;
+@property (weak, nonatomic) IBOutlet UILabel *Date;
 @property(weak,nonatomic)NSDictionary *flightInfo;
 
 @property (weak, nonatomic) IBOutlet UIButton *OrderButton;

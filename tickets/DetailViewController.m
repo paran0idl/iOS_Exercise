@@ -12,7 +12,7 @@
 @end
 
 @implementation DetailViewController
-@synthesize flightInfo,DCity,ACity,DTime,ATime,AirPlaneNo,FlightNo,LeftTotalT,APrice,DisPrice;
+@synthesize flightInfo,DCity,ACity,DTime,ATime,AirPlaneNo,FlightNo,LeftTotalT,APrice,DisPrice,FirstLeft,Date;
 - (void)viewDidLoad {
     [super viewDidLoad];
     int leftT=[[flightInfo valueForKey:@"LeftT"]intValue];
@@ -25,7 +25,8 @@
     APrice.text=[NSString stringWithFormat:@"￥%@",[flightInfo valueForKey:@"Price"]];
     DisPrice.text=[NSString stringWithFormat:@"￥%@",[flightInfo valueForKey:@"DisPrice"]];
     LeftTotalT.text=[NSString stringWithFormat:@"%@/%@",[flightInfo valueForKey:@"LeftT"],[flightInfo valueForKey:@"TotalT"]];
-    // Do any additional setup after loading the view.
+    FirstLeft.text=[NSString stringWithFormat:@"剩余头等舱:%@",[flightInfo valueForKey:@"FirstSeat"]];
+    Date.text=[NSString stringWithFormat:@"%@",[flightInfo valueForKey:@"Date"]];
     NSLog(@"%@",[flightInfo valueForKey:@"id"]);
     if(leftT==0){
         _OrderButton.enabled=NO;

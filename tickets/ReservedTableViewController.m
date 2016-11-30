@@ -7,13 +7,16 @@
 //
 
 #import "ReservedTableViewController.h"
-
+#import "FreeUpgrade.h"
 @interface ReservedTableViewController ()
 {
     NSString *fileName;
     NSString *doc;
     NSMutableArray *listofReserved;
     FMDatabase *db;
+    int leftFirst;
+    int current;
+    int all;
 }
 @end
 
@@ -97,9 +100,13 @@
     }
     User=[self LookUpWithUser:UserID];
     Ticket=[self LookUpWithTicket:TicketID];
+    leftFirst=[[Ticket valueForKey:@"FirstSeat"]intValue];
+    all=[[Ticket valueForKey:@"TotalT"] intValue];
+    current=[[[listofReserved objectAtIndex:indexPath.row] valueForKey:@"Seat"] intValue];
+    
     cell.DCity.text=[Ticket valueForKey:@"DCity"];
     cell.ACity.text=[Ticket valueForKey:@"ACity"];
-    cell.DateAndTime.text=[NSString stringWithFormat:@"%@-%@",[Ticket valueForKey:@"DTime"],[Ticket valueForKey:@"ATime"]];
+    cell.DateAndTime.text=[NSString stringWithFormat:@"%@ %@-%@",[Ticket valueForKey:@"Date"],[Ticket valueForKey:@"DTime"],[Ticket valueForKey:@"ATime"]];
     cell.FlightAndAirplane.text=[NSString stringWithFormat:@"%@  %@",[Ticket valueForKey:@"FlightNo"],[Ticket valueForKey:@"AirplaneNo"]];
     cell.Name.text=[User valueForKey:@"UserName"];
     cell.ID.text=[User valueForKey:@"UserID"];
@@ -135,7 +142,8 @@
     UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         [db executeUpdate:@"delete from Ordered where id = ?;",[[listofReserved objectAtIndex:sender.tag] valueForKey:@"id"]];
         NSNumber *refund=[NSNumber numberWithInt:[[[listofReserved objectAtIndex:sender.tag] valueForKey:@"TicketID"]intValue]];
-        [Database refundTickets:refund DataBase:db];
+        NSNumber *Level=[NSNumber numberWithInt:[[[listofReserved objectAtIndex:sender.tag] valueForKey:@"Level"]intValue]];
+        [Database refundTickets:refund Level:Level DataBase:db];
         [listofReserved removeObjectAtIndex:sender.tag];
         
         [self refresh];
@@ -148,7 +156,8 @@
     [deleteController addAction:cancelAction];
     [self presentViewController:deleteController animated:YES completion:nil];
 }
--(void)freeUpgrade{
+- (IBAction)upgradeButtonPress:(UIButton *)sender {
     
 }
+
 @end

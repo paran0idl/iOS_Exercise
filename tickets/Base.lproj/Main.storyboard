@@ -297,6 +297,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="寻找相似航班"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FirstLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoj-OO-G0h">
+                                <frame key="frameInset" minX="34" minY="503" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-um-L2K">
+                                <frame key="frameInset" minX="119" minY="290" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -308,7 +322,9 @@
                         <outlet property="AirPlaneNo" destination="CgC-Ws-FSH" id="7kA-Hu-4xt"/>
                         <outlet property="DCity" destination="yFy-Ri-MOQ" id="6QH-iN-0Qj"/>
                         <outlet property="DTime" destination="kys-oC-6vm" id="eS0-Jt-rlS"/>
+                        <outlet property="Date" destination="HPv-um-L2K" id="WFm-np-mTW"/>
                         <outlet property="DisPrice" destination="niF-ly-OPp" id="yPx-vq-DqT"/>
+                        <outlet property="FirstLeft" destination="Zoj-OO-G0h" id="aof-IH-oU6"/>
                         <outlet property="FlightNo" destination="2bU-Gx-aaF" id="cvv-qU-TOD"/>
                         <outlet property="LeftTotalT" destination="94B-4L-XSF" id="SWY-BV-mNN"/>
                         <outlet property="OrderButton" destination="c70-1f-itG" id="9hb-zV-lbX"/>
@@ -316,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7B-uX-00I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3537" y="36"/>
+            <point key="canvasLocation" x="3536.8000000000002" y="35.532233883058474"/>
         </scene>
         <!--Reserved Tickets-->
         <scene sceneID="anE-jZ-u8m">
@@ -331,7 +347,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="239"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h9B-93-Bmh" id="c7r-aF-lhV">
-                                    <frame key="frameInset" width="375" height="239"/>
+                                    <frame key="frameInset" width="375" height="238"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DCity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmY-Ma-DBO">
@@ -357,6 +373,9 @@
                                             <frame key="frameInset" minX="290" minY="196" width="60" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Upgrade"/>
+                                            <connections>
+                                                <action selector="upgradeButtonPress:" destination="lIl-6b-WAV" eventType="touchUpInside" id="jsm-vb-JrB"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DateAndTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-cj-s3a">
                                             <frame key="frameInset" minX="47" minY="60" width="171" height="17"/>
@@ -447,7 +466,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FfP-Hb-EQK" id="M9g-Ci-BmZ">
-                                    <frame key="frameInset" width="375" height="68"/>
+                                    <frame key="frameInset" width="375" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st2-hC-KR9">
@@ -475,7 +494,7 @@
                                 <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myn-8s-TC8" id="hFc-pC-zkb">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbD-UI-P4R">
@@ -638,7 +657,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XBf-NG-XFv" id="9mb-o6-aAf">
-                                    <frame key="frameInset" width="342" height="131"/>
+                                    <frame key="frameInset" width="342" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO7-3S-nGQ">
@@ -697,6 +716,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNF-Ni-y1q">
+                                            <frame key="frameInset" minX="128" minY="91" width="125" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -705,6 +731,7 @@
                                     <outlet property="AirPlaneNo" destination="djU-uc-csU" id="cL6-2c-lCf"/>
                                     <outlet property="DCity" destination="OQq-Mx-Uc5" id="dRa-8F-OeW"/>
                                     <outlet property="DTime" destination="MO7-3S-nGQ" id="zjd-BX-Nrd"/>
+                                    <outlet property="Date" destination="mNF-Ni-y1q" id="9HH-Do-VQR"/>
                                     <outlet property="FlightNo" destination="vkT-ma-jQp" id="xbw-eT-pLP"/>
                                     <outlet property="TicketStatus" destination="R7c-Kf-fyj" id="xiV-ya-eim"/>
                                     <segue destination="iub-ea-6th" kind="push" identifier="detail" id="he1-S1-geH"/>

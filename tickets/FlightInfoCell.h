@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *FlightNo;
 @property (weak, nonatomic) IBOutlet UILabel *AirPlaneNo;
 @property (weak, nonatomic) IBOutlet UILabel *TicketStatus;
+@property (weak, nonatomic) IBOutlet UILabel *Date;
 
 @end
