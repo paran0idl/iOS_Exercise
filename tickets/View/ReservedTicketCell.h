@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *Level;
 
 @property (weak, nonatomic) IBOutlet UIButton *RefundButton;
-@property (weak, nonatomic) IBOutlet UIButton *UpgradeButton;
+
 
 @end

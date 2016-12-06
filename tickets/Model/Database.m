@@ -47,6 +47,23 @@
 +(void)createOrderedFile:(NSString *)doc filename:(NSString *)fileName{
     FMDatabase * db = [FMDatabase databaseWithPath:fileName];
     if ([db open]) {
+        NSString * sql = @"CREATE TABLE 'Login' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'Username'VARCHAR(30),'Password'VARCHAR(30))";
+        BOOL res = [db executeUpdate:sql];
+        if (!res) {
+            NSLog(@"error when creating db table login");
+            [db close];
+        } else {
+            NSLog(@"succ to creating db table login");
+            NSLog(@"%@",fileName);
+            [db close];
+        }
+    } else {
+        NSLog(@"error when open db");
+    }
+}
++(void)createLoginFile:(NSString *)doc filename:(NSString *)fileName{
+    FMDatabase * db = [FMDatabase databaseWithPath:fileName];
+    if ([db open]) {
         NSString * sql = @"CREATE TABLE 'Ordered' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'UserID' INTEGER, 'TicketID'INTEGER,'Seat'INTEGER,'Level'INTEGER,'Price'INTEGER)";
         BOOL res = [db executeUpdate:sql];
         if (!res) {
@@ -69,6 +86,7 @@
         [self createDataBase:Doc filename:FileName];
         [self createUserFile:Doc filename:FileName];
         [self createOrderedFile:Doc filename:FileName];
+        [self createDataBase:Doc filename:FileName];
     }else{
         NSLog(@"File exist");
         NSLog(@"%@",FileName);
@@ -94,6 +112,19 @@
     if ([db open]) {
         NSString * sql = @"insert into User (UserName,UserID,UserSex,DateOfBirth) values(?,?,?,?)";
         BOOL res = [db executeUpdate:sql,UserName,UserID,UserSex,DateOfBirth];
+        if (!res) {
+            NSLog(@"error to insert data");
+        } else {
+            NSLog(@"succ to insert data");
+        }
+        [db close];
+    }
+}
++(void)insertLoginFileToDataBase:(NSString *)Username Password:(NSString *)Password DataBase:(FMDatabase *)db{
+    
+    if ([db open]) {
+        NSString * sql = @"insert into Login (Username,Password) values(?,?)";
+        BOOL res = [db executeUpdate:sql,Username,Password];
         if (!res) {
             NSLog(@"error to insert data");
         } else {

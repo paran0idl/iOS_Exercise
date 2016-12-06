@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F750E45A1DF265070098374F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F750E4591DF265070098374F /* LoginViewController.m */; };
+		F750E45D1DF265D00098374F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F750E45C1DF265D00098374F /* RegisterViewController.m */; };
 		F75194981DF1D42D0011C735 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75194891DF1D42D0011C735 /* DetailViewController.m */; };
 		F75194991DF1D42D0011C735 /* enterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F751948B1DF1D42D0011C735 /* enterInfo.m */; };
 		F751949A1DF1D42D0011C735 /* EnterUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F751948D1DF1D42D0011C735 /* EnterUserInfoViewController.m */; };
 		F751949B1DF1D42D0011C735 /* FlightInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F751948F1DF1D42D0011C735 /* FlightInfoTableViewController.m */; };
-		F751949C1DF1D42D0011C735 /* InquireTicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75194911DF1D42D0011C735 /* InquireTicketsTableViewController.m */; };
 		F751949E1DF1D42D0011C735 /* OrderTicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75194951DF1D42D0011C735 /* OrderTicketsTableViewController.m */; };
 		F751949F1DF1D42D0011C735 /* ReservedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75194971DF1D42D0011C735 /* ReservedTableViewController.m */; };
 		F75194A61DF1D43B0011C735 /* FlightInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75194A11DF1D43B0011C735 /* FlightInfoCell.m */; };
@@ -32,6 +33,10 @@
 		11441FF1F91550B159ACF85E /* Pods-tickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB1904FDCF567B2D411E8B3 /* Pods_tickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FACF0B94BE891CC7FC3F13 /* Pods-tickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tickets.release.xcconfig"; path = "Pods/Target Support Files/Pods-tickets/Pods-tickets.release.xcconfig"; sourceTree = "<group>"; };
+		F750E4581DF265070098374F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/LoginViewController.h; sourceTree = "<group>"; };
+		F750E4591DF265070098374F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/LoginViewController.m; sourceTree = "<group>"; };
+		F750E45B1DF265D00098374F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controller/RegisterViewController.h; sourceTree = "<group>"; };
+		F750E45C1DF265D00098374F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controller/RegisterViewController.m; sourceTree = "<group>"; };
 		F75194881DF1D42D0011C735 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Controller/DetailViewController.h; sourceTree = "<group>"; };
 		F75194891DF1D42D0011C735 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Controller/DetailViewController.m; sourceTree = "<group>"; };
 		F751948A1DF1D42D0011C735 /* enterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = enterInfo.h; path = Controller/enterInfo.h; sourceTree = "<group>"; };
@@ -40,8 +45,6 @@
 		F751948D1DF1D42D0011C735 /* EnterUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnterUserInfoViewController.m; path = Controller/EnterUserInfoViewController.m; sourceTree = "<group>"; };
 		F751948E1DF1D42D0011C735 /* FlightInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlightInfoTableViewController.h; path = Controller/FlightInfoTableViewController.h; sourceTree = "<group>"; };
 		F751948F1DF1D42D0011C735 /* FlightInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlightInfoTableViewController.m; path = Controller/FlightInfoTableViewController.m; sourceTree = "<group>"; };
-		F75194901DF1D42D0011C735 /* InquireTicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InquireTicketsTableViewController.h; path = Controller/InquireTicketsTableViewController.h; sourceTree = "<group>"; };
-		F75194911DF1D42D0011C735 /* InquireTicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InquireTicketsTableViewController.m; path = Controller/InquireTicketsTableViewController.m; sourceTree = "<group>"; };
 		F75194941DF1D42D0011C735 /* OrderTicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTicketsTableViewController.h; path = Controller/OrderTicketsTableViewController.h; sourceTree = "<group>"; };
 		F75194951DF1D42D0011C735 /* OrderTicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTicketsTableViewController.m; path = Controller/OrderTicketsTableViewController.m; sourceTree = "<group>"; };
 		F75194961DF1D42D0011C735 /* ReservedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReservedTableViewController.h; path = Controller/ReservedTableViewController.h; sourceTree = "<group>"; };
@@ -114,6 +117,10 @@
 		F75194811DF1CDBF0011C735 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F750E45B1DF265D00098374F /* RegisterViewController.h */,
+				F750E45C1DF265D00098374F /* RegisterViewController.m */,
+				F750E4581DF265070098374F /* LoginViewController.h */,
+				F750E4591DF265070098374F /* LoginViewController.m */,
 				F75194881DF1D42D0011C735 /* DetailViewController.h */,
 				F75194891DF1D42D0011C735 /* DetailViewController.m */,
 				F751948A1DF1D42D0011C735 /* enterInfo.h */,
@@ -122,8 +129,6 @@
 				F751948D1DF1D42D0011C735 /* EnterUserInfoViewController.m */,
 				F751948E1DF1D42D0011C735 /* FlightInfoTableViewController.h */,
 				F751948F1DF1D42D0011C735 /* FlightInfoTableViewController.m */,
-				F75194901DF1D42D0011C735 /* InquireTicketsTableViewController.h */,
-				F75194911DF1D42D0011C735 /* InquireTicketsTableViewController.m */,
 				F75194941DF1D42D0011C735 /* OrderTicketsTableViewController.h */,
 				F75194951DF1D42D0011C735 /* OrderTicketsTableViewController.m */,
 				F75194961DF1D42D0011C735 /* ReservedTableViewController.h */,
@@ -370,12 +375,13 @@
 				F751949A1DF1D42D0011C735 /* EnterUserInfoViewController.m in Sources */,
 				F751949B1DF1D42D0011C735 /* FlightInfoTableViewController.m in Sources */,
 				F75194AE1DF1D4550011C735 /* Database.m in Sources */,
+				F750E45A1DF265070098374F /* LoginViewController.m in Sources */,
 				F751949F1DF1D42D0011C735 /* ReservedTableViewController.m in Sources */,
 				F75194A81DF1D43B0011C735 /* UserInfoCell.m in Sources */,
 				F76DA1951DCC6F190071AB54 /* AppDelegate.m in Sources */,
-				F751949C1DF1D42D0011C735 /* InquireTicketsTableViewController.m in Sources */,
 				F75194991DF1D42D0011C735 /* enterInfo.m in Sources */,
 				F75194A71DF1D43B0011C735 /* ReservedTicketCell.m in Sources */,
+				F750E45D1DF265D00098374F /* RegisterViewController.m in Sources */,
 				F75194A61DF1D43B0011C735 /* FlightInfoCell.m in Sources */,
 				F76DA1921DCC6F190071AB54 /* main.m in Sources */,
 				F751949E1DF1D42D0011C735 /* OrderTicketsTableViewController.m in Sources */,

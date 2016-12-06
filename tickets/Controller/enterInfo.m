@@ -19,8 +19,6 @@
 @synthesize FlightNo,AirplaneNo,DCity,ACity,TotalT,LeftT,Price,DisPrice,DTime,ATime,db;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    doc=[[NSString alloc]init ];
-    fileName=[[NSString alloc] init];
     [Database createDataBase:doc filename:fileName];
     FlightNo.delegate=self;
     AirplaneNo.delegate=self;

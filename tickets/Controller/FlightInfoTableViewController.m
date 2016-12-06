@@ -26,11 +26,15 @@
 @implementation FlightInfoTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //数据初始化
     fileName=[Database loadDataBase:doc filename:fileName];
     listofFlights=[self addObjectWithFlightInfo];
     
     //搜索框初始化
     self.searchController.searchBar.selectedScopeButtonIndex=0;
+    //self.navigationController.navigationBar.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginBackground.png"]];
+    self.tableView.backgroundView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"InfoBackground.png"]];
+    
 }
 -(NSMutableArray *)addObjectWithFlightInfo{
     db = [FMDatabase databaseWithPath:fileName];
@@ -67,11 +71,12 @@
 
 - (FlightInfoCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FlightInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    //cell.layer.opaque=YES;
+    cell.backgroundColor=[UIColor clearColor];
     if(self.searchController.active){
-        //
+        //当搜索框激活时
         int ticket=[[[searchList objectAtIndex:indexPath.row]valueForKey:@"LeftT"] intValue];
         
-        //
         cell.DCity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DCity"];
         cell.ACity.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"ACity"];
         cell.DTime.text=[[searchList objectAtIndex:indexPath.row] valueForKey:@"DTime"];
@@ -89,6 +94,7 @@
         }
         
     }else{
+        //当搜索框未激活时
         int ticket=[[[listofFlights objectAtIndex:indexPath.row]valueForKey:@"LeftT"] intValue];
     cell.DCity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"DCity"];
     cell.ACity.text=[[listofFlights objectAtIndex:indexPath.row] valueForKey:@"ACity"];
@@ -153,6 +159,7 @@
     }else if (self.searchController.searchBar.selectedScopeButtonIndex==1){
         preicate = [NSPredicate predicateWithFormat:@"ACity BEGINSWITH[c] %@",searchString];
     }else if(self.searchController.searchBar.selectedScopeButtonIndex==2){
+        //模糊查找
         preicate = [NSPredicate predicateWithFormat:@"FlightNo CONTAINS %@",searchString];
     }
     if (searchList != nil) {
@@ -163,7 +170,7 @@
     
     [self.tableView reloadData];
 }
-#pragma mark - refresh 操作
+#pragma mark - 刷新操作
 -(void)refresh{
     if([listofFlights count]!=0){
         [listofFlights removeAllObjects];
@@ -175,13 +182,12 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //[super viewWillAppear:YES];
     [self refresh];
 }
-#pragma mark - Navigation
+#pragma mark - 导航
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //当目的地位详细信息时
     if([segue.identifier isEqualToString:@"detail"]){
     DetailViewController *detail=[[DetailViewController alloc] init];
     detail=[segue destinationViewController];
@@ -193,6 +199,7 @@
         }
             self.searchController.active=NO;
     }else if([segue.identifier isEqualToString:@"enterInfo"]){
+        //当目的地为输入信息时
         enterInfo *info=[[enterInfo alloc] init];
         info=[segue destinationViewController];
     }

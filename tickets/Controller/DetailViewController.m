@@ -15,6 +15,8 @@
 @synthesize flightInfo,DCity,ACity,DTime,ATime,AirPlaneNo,FlightNo,LeftTotalT,APrice,DisPrice,FirstLeft,Date;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.opaque=NO;
+    self.OrderButton.layer.cornerRadius=7.5;
     int leftT=[[flightInfo valueForKey:@"LeftT"]intValue];
     DCity.text=[flightInfo valueForKey:@"DCity"];
     ACity.text=[flightInfo valueForKey:@"ACity"];

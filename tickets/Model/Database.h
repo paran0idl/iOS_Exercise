@@ -19,4 +19,6 @@
 +(NSString *)loadDataBase:(NSString *)doc filename:(NSString *)fileName;
 +(void)orderTickets:(NSNumber *)UserID TicketID:(NSNumber *)TicketID Seat:(NSNumber *)Seat Level:(NSNumber *)Level Price:(NSNumber *)Price DataBase:(FMDatabase *)db;
 +(void)refundTickets:(NSNumber *)TicketID Level:(NSNumber *)Level DataBase:(FMDatabase *)db;
++(void)createLoginFile:(NSString *)doc filename:(NSString *)fileName;
++(void)insertLoginFileToDataBase:(NSString *)Username Password:(NSString *)Password DataBase:(FMDatabase *)db;
 @end

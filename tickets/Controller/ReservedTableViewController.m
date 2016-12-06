@@ -26,6 +26,8 @@
     [super viewDidLoad];
     fileName=[Database loadDataBase:doc filename:fileName];
     listofReserved=[self addObjectWithReservedInfo];
+    self.tableView.backgroundView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"InfoBackground.png"]];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
   //  [self viewWillAppear:YES];
@@ -114,6 +116,8 @@
     cell.Level.text=Level;
     cell.RefundButton.tag=indexPath.row;
     [cell.RefundButton addTarget:self action:@selector(refundButttonPress:) forControlEvents:UIControlEventTouchUpInside];
+    cell.RefundButton.layer.cornerRadius=7.5;
+    cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
 -(void)refresh{
@@ -156,8 +160,6 @@
     [deleteController addAction:cancelAction];
     [self presentViewController:deleteController animated:YES completion:nil];
 }
-- (IBAction)upgradeButtonPress:(UIButton *)sender {
-    
-}
+
 
 @end

@@ -27,6 +27,7 @@
     fileName=[Database loadDataBase:doc filename:fileName];
     [Database createOrderedFile:doc filename:fileName];
     listofUsers=[self addObjectWithUserInfo];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
